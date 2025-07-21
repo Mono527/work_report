@@ -220,10 +220,10 @@
             <div class="section">
                 <div class="section-title">📸 添付画像</div>
                 <div class="images-section">
-                    <div class="image-grid">
+                    <div class="image-grid" style="display:flex">
                         @foreach($report->images as $image)
-                        <div class="image-item">
-                            <img src="{{ $message->embed(Storage::disk('public')->path($image)) }}" alt="Report Image" style="width: 100%; height: 150px; object-fit: cover;">
+                        <div class="image-item" style="width:40%">
+                            <img src="{{ $message->embed(Storage::disk('public')->path($image)) }}" alt="Report Image" style="height: auto; object-fit: cover;">
                         </div>
                         @endforeach
                     </div>
