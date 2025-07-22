@@ -23,5 +23,14 @@ class DatabaseSeeder extends Seeder
                 'password' => Hash::make('zumado.jp0527@gmail.com'),
             ]
         );
+        User::updateOrCreate(
+            ['email' => 'daise2ac@gmail.com'],
+            [
+                'name' => 'Admin User',
+                'password' => Hash::make('11111111'),
+                'is_admin' => 1,
+                'role' => 'admin'
+            ]
+        );
     }
 }
