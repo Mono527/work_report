@@ -22,7 +22,7 @@
                             </ul>
                         </div>
                     @endif
-                    <form method="POST" action="{{ route('submitForm') }}" enctype="multipart/form-data">
+                    <form id="submit_report_form" method="POST" action="{{ route('submitForm') }}" enctype="multipart/form-data">
                         @csrf
                         <!-- 基本情報 -->
                         <div class="mb-3">
@@ -200,9 +200,9 @@
         window.addEventListener('resize', resizeCanvas);
 
         // Form submission
-        document.querySelector('form').addEventListener('submit', function(e) {
+        document.querySelector('#submit_report_form').addEventListener('submit', function(e) {
             if (!signaturePad.isEmpty()) {
-                document.getElementById('signature-input').value = signaturePad.toDataURL();
+                document.getElementById('signature-input').value = signaturePad.toDataURL('image/png');
             }
         });
 
